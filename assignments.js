@@ -28,3 +28,22 @@ function isJavaScriptFile(fileName){
 }
 let inputName = isJavaScriptFile("I am javascript.js");
 console.log(inputName);
+
+/*
+ * .............
+ * 3. Problem Number 3 Solution Given below.
+ * ..............
+*/
+
+function oilPrice(dieselQuantity, petrolQuantity, octaneQuantity) {
+    const dieselPricePerLiter = 114;
+    const petrolPricePerLiter = 130;
+    const octanePricePerLiter = 135;
+    let dieselPrice = dieselPricePerLiter * dieselQuantity;
+    let petrolPrice = petrolPricePerLiter * petrolQuantity;
+    let octanePrice = octanePricePerLiter * octaneQuantity;
+    const total = dieselPrice + petrolPrice+ octanePrice;
+    return total;
+}
+let oilQuantity = oilPrice(1, 0, 2);
+console.log(oilQuantity);
