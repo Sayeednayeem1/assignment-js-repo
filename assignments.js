@@ -6,9 +6,15 @@
 
 function radianToDegree(radian){
     let degree = radian * 57.2958;
-    return degree;
+    const errorMessage = "Please input a valid number";
+    if(typeof radian !== "number"){
+        return errorMessage;
+    }
+    else{
+        return degree;
+    }
 }
-let convertedToDegree = radianToDegree(10);
+let convertedToDegree = radianToDegree(34);
 console.log(convertedToDegree);
 
 
@@ -19,14 +25,18 @@ console.log(convertedToDegree);
 */
 
 function isJavaScriptFile(fileName){
-    if(fileName.endsWith(".js")){
+    const errorMessage = "Please input a valid string";
+    if(typeof fileName !== "string"){
+        return errorMessage;
+    }
+    else if(fileName.endsWith(".js")){
         return true;
     }
     else{
         return false;
     }
 }
-let inputName = isJavaScriptFile("I am javascript.js");
+let inputName = isJavaScriptFile("whatever whatweever.pdf");
 console.log(inputName);
 
 /*
@@ -42,10 +52,16 @@ function oilPrice(dieselQuantity, petrolQuantity, octaneQuantity) {
     let dieselPrice = dieselPricePerLiter * dieselQuantity;
     let petrolPrice = petrolPricePerLiter * petrolQuantity;
     let octanePrice = octanePricePerLiter * octaneQuantity;
+    const errorMessage = "Please input a valid number";
     const total = dieselPrice + petrolPrice+ octanePrice;
-    return total;
+    if(typeof dieselQuantity !== "number" || typeof petrolQuantity !== "number" || typeof octanePrice !== "number"){
+        return errorMessage;
+    }
+    else{
+        return total;
+    }
 }
-let oilQuantity = oilPrice(1, 0, 2);
+let oilQuantity = oilPrice(1, 34, 2);
 console.log(oilQuantity);
 
 /*
@@ -64,9 +80,15 @@ function publicBusFare(passengers){
     let finalRemainder = remainderAfterMicro;
     let publicBusPrice = 250;
     let totalPublicBusPrice  =finalRemainder * 250;
-    return totalPublicBusPrice;
+    const errorMessage = "Please input a valid number";
+    if(typeof passengers !== "number"){
+        return errorMessage;
+    }
+    else{
+        return totalPublicBusPrice;
+    }
 }
-let passengersFigure = publicBusFare(365);
+let passengersFigure = publicBusFare(249);
 console.log(passengersFigure);
 
 
@@ -82,7 +104,11 @@ function isBestFriend(value1, value2){
     let firstFriendKey = value1.friend;
     let secondNameKey = value2.name;
     let secondFriendKey = value2.friend;
-    if(firstNameKey === secondFriendKey && firstFriendKey === secondNameKey){
+    const errorMessage = "Please input a valid object";
+    if(typeof value1 !== "object" || typeof value2 !== "object"){
+        return errorMessage;
+    }
+    else if(firstNameKey === secondFriendKey && firstFriendKey === secondNameKey){
         return true;
     }
     else{
@@ -99,3 +125,6 @@ let secondObject = {
 };
 let result = isBestFriend(firstObject, secondObject);
 console.log(result); 
+
+
+
