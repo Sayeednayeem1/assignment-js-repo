@@ -55,10 +55,21 @@ console.log(oilQuantity);
 */
 
 
-function publicBusFare(totalPassengerrs){
-    let 
-    
+function publicBusFare(passengers){
+    let totalPassengers = passengers;
+    let canGoUsingBus = 50;
+    let canGoUsingMicroBus = 11;
+    let remainderAfter = passengers % canGoUsingBus;
+    let remainderAfterMicro = remainderAfter % canGoUsingMicroBus;
+    let finalRemainder = remainderAfterMicro;
+    let publicBusPrice = 250;
+    let totalPublicBusPrice  =finalRemainder * 250;
+    return totalPublicBusPrice;
 }
+let passengersFigure = publicBusFare(365);
+console.log(passengersFigure);
+
+
 
 /*
  * .............
