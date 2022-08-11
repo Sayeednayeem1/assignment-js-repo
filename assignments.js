@@ -1,11 +1,13 @@
-/*
+ /*
  * .............
  * 1.Problem Number 1 Solution Given below.
- * ..............
+ * ......................
 */
 
 function radianToDegree(radian){
     let degree = radian * 57.2958;
+    degree = degree.toFixed(2);
+    degree = parseFloat(degree);
     const errorMessage = "Please input a valid number";
     if(typeof radian !== "number"){
         return errorMessage;
@@ -14,35 +16,33 @@ function radianToDegree(radian){
         return degree;
     }
 }
-let convertedToDegree = radianToDegree(34);
-console.log(convertedToDegree);
+
 
 
 /*
  * .............
  * 2. Problem Number 2 Solution Given below.
- * ..............
+ * .......................
 */
 
-function isJavaScriptFile(fileName){
+function isJavaScriptFile(String){
     const errorMessage = "Please input a valid string";
-    if(typeof fileName !== "string"){
+    if(typeof String !== "string"){
         return errorMessage;
     }
-    else if(fileName.endsWith(".js")){
+    else if(String.endsWith(".js")){
         return true;
     }
     else{
         return false;
     }
 }
-let inputName = isJavaScriptFile("whatever whatweever.pdf");
-console.log(inputName);
+
 
 /*
  * .............
  * 3. Problem Number 3 Solution Given below.
- * ..............
+ * .....................
 */
 
 function oilPrice(dieselQuantity, petrolQuantity, octaneQuantity) {
@@ -61,13 +61,12 @@ function oilPrice(dieselQuantity, petrolQuantity, octaneQuantity) {
         return total;
     }
 }
-let oilQuantity = oilPrice(1, 34, 2);
-console.log(oilQuantity);
+
 
 /*
  * .............
  * 4. Problem Number 4 Solution Given below.
- * ..............
+ * ......................
 */
 
 
@@ -75,11 +74,11 @@ function publicBusFare(passengers){
     let totalPassengers = passengers;
     let canGoUsingBus = 50;
     let canGoUsingMicroBus = 11;
-    let remainderAfter = passengers % canGoUsingBus;
-    let remainderAfterMicro = remainderAfter % canGoUsingMicroBus;
-    let finalRemainder = remainderAfterMicro;
-    let publicBusPrice = 250;
-    let totalPublicBusPrice  =finalRemainder * 250;
+    let remainderAfterBoardingBus = totalPassengers % canGoUsingBus;
+    let remainderAfterBoardingMicro = remainderAfterBoardingBus % canGoUsingMicroBus;
+    let finalRemainder = remainderAfterBoardingMicro;
+    let publicBusTicketPrice = 250;
+    let totalPublicBusPrice  = finalRemainder * publicBusTicketPrice;
     const errorMessage = "Please input a valid number";
     if(typeof passengers !== "number"){
         return errorMessage;
@@ -88,24 +87,23 @@ function publicBusFare(passengers){
         return totalPublicBusPrice;
     }
 }
-let passengersFigure = publicBusFare(249);
-console.log(passengersFigure);
+
 
 
 
 /*
  * .............
  * 5. Problem Number 5 Solution Given below.
- * ..............
+ * ......................
 */
 
-function isBestFriend(value1, value2){
-    let firstNameKey = value1.name;
-    let firstFriendKey = value1.friend;
-    let secondNameKey = value2.name;
-    let secondFriendKey = value2.friend;
+function isBestFriend(object1, object2){
+    let firstNameKey = object1.name;
+    let firstFriendKey = object1.friend;
+    let secondNameKey = object2.name;
+    let secondFriendKey = object2.friend;
     const errorMessage = "Please input a valid object";
-    if(typeof value1 !== "object" || typeof value2 !== "object"){
+    if(typeof object1 !== "object" || typeof object2 !== "object"){
         return errorMessage;
     }
     else if(firstNameKey === secondFriendKey && firstFriendKey === secondNameKey){
@@ -115,16 +113,9 @@ function isBestFriend(value1, value2){
         return false;
     }
 }
-let firstObject = {
-    name:"Tom",
-    friend: "Rock"
-};
-let secondObject = {
-    name: "Rock",
-    friend: "Tom"
-};
-let result = isBestFriend(firstObject, secondObject);
-console.log(result); 
 
-
-
+/*
+ *..............
+ * The End
+ * ...............
+*/
