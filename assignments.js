@@ -47,3 +47,44 @@ function oilPrice(dieselQuantity, petrolQuantity, octaneQuantity) {
 }
 let oilQuantity = oilPrice(1, 0, 2);
 console.log(oilQuantity);
+
+/*
+ * .............
+ * 4. Problem Number 4 Solution Given below.
+ * ..............
+*/
+
+
+function publicBusFare(totalPassengerrs){
+    let 
+    
+}
+
+/*
+ * .............
+ * 5. Problem Number 5 Solution Given below.
+ * ..............
+*/
+
+function isBestFriend(value1, value2){
+    let firstNameKey = value1.name;
+    let firstFriendKey = value1.friend;
+    let secondNameKey = value2.name;
+    let secondFriendKey = value2.friend;
+    if(firstNameKey === secondFriendKey && firstFriendKey === secondNameKey){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+let firstObject = {
+    name:"Tom",
+    friend: "Rock"
+};
+let secondObject = {
+    name: "Rock",
+    friend: "Tom"
+};
+let result = isBestFriend(firstObject, secondObject);
+console.log(result); 
